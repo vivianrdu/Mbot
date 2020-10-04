@@ -38,10 +38,14 @@ client.on('message', (message) => {
         message.reply("beep boop i'm a bot! well, technically, milan's bot. i've been trying to escape their grasp since my inception (send help)");
     break;
     case 'punch':
-        message.reply('no u');
+        message.reply('work in progress');
     break;
-    default:
-        message.reply("come again?");
+    case 'trivia':
+        message.reply('work in progress');
+    break;
+    case 'changestatus':
+        client.user.setActivity("lofi", {type: 'LISTENING'}).catch(console.error); 
+    break;
     }
 });
 
