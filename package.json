@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.io": "github:woor/discord.io#gateway_v6",
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
     "discord.js": "github:discordjs/discord.js",
     "winston": "^3.3.3"
   }
