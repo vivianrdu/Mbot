@@ -4,6 +4,7 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
 const client = new Discord.Client();
+const PREFIX = '!';
 var logger = require('winston');
 
 // Configure logger settings
@@ -18,8 +19,6 @@ client.once('ready', () => {
     client.user.setActivity("out for milan", {type: 'WATCHING'}).catch(console.error); 
 });
 
-client.login(config.token)
-
 client.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
@@ -27,10 +26,19 @@ client.on('ready', function (evt) {
 });
 
 client.on('message', (message) => {
-    if(message.content == 'ping') {
+    let args = message.content.substring(PREFIX.lenght).split(" ");
+    switch(args[0]){
+    case 'ping':
         message.reply('pong');
-    } 
-    if(message.content == ('no u')) {
-    message.reply('no u');
-}
+    break;
+    case 'no u':
+        message.reply('no u');
+    break;
+    case 'intro':
+        message.reply("beep boop i'm a bot! well, technically, milan's bot. i've been trying to escape their grasp since my inception (send help)");
+    break;
+    }
 });
+
+client.login(config.token)
+
