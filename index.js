@@ -11,7 +11,7 @@ const activities_list = [
     "out for milan", 
     "anime",
     "the watchmen", 
-    "milan's computer RAM"
+    "you, yes you"
     ];
 
 // Configure logger settings
@@ -27,7 +27,7 @@ client.once('ready', () => {
     setInterval(() => {
         const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
         client.user.setActivity(activities_list[index], {type: 'WATCHING'}).catch(console.error); 
-    }, 10000);
+    }, 30000);
 });
 
 client.on('ready', function (evt) {
