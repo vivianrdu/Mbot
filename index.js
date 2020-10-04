@@ -7,6 +7,13 @@ const client = new Discord.Client();
 const PREFIX = '!';
 var logger = require('winston');
 
+const activities_list = [
+    "out for milan", 
+    "anime",
+    "the watchmen", 
+    "milan's computer RAM"
+    ];
+
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -16,7 +23,11 @@ logger.level = 'debug';
 
 client.once('ready', () => {
 	console.log('Ready!');
-    client.user.setActivity("out for milan", {type: 'WATCHING'}).catch(console.error); 
+    
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
+        client.user.setActivity(activities_list[index], {type: 'WATCHING'}).catch(console.error); 
+    }, 10000);
 });
 
 client.on('ready', function (evt) {
@@ -42,9 +53,6 @@ client.on('message', (message) => {
     break;
     case 'trivia':
         message.reply('work in progress');
-    break;
-    case 'changestatus':
-        client.user.setActivity("lofi", {type: 'LISTENING'}).catch(console.error); 
     break;
     }
 });
