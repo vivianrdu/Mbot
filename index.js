@@ -37,6 +37,11 @@ client.on('message', (message) => {
     case 'intro':
         message.reply("beep boop i'm a bot! well, technically, milan's bot. i've been trying to escape their grasp since my inception (send help)");
     break;
+    case 'punch':
+        message.reply('no u');
+    break;
+    default:
+        message.reply("come again?");
     }
 });
 
