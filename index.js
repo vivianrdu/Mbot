@@ -11,7 +11,8 @@ const activities_list = [
     "out for milan", 
     "anime",
     "the watchmen", 
-    "you, yes you"
+    "you, yes you",
+    "mona make coffee"
     ];
 
 // Configure logger settings
